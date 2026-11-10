@@ -1,5 +1,5 @@
 name: Build Meera AI APK
-on:
+"on":
   workflow_dispatch:
   push:
 jobs:
@@ -32,7 +32,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
-  - name: Build
+      - name: Build
         shell: bash
         working-directory: ${{ steps.proj.outputs.dir }}
         run: gradle assembleDebug --no-daemon --console=plain 2>&1 | tee build.log
